@@ -313,17 +313,20 @@ public enum MapleJob {
 			return 0;
 		}
 		int level = 0;
-		if (getId() % 10 == 1){ // 3rd job
+		if (getId() % 10 == 2){ // 4th job
 			level = 120;
 		}
-		else if (getId() % 100 > 0 && getId() % 10 == 0){ // 2nd job
+		else if (getId() % 10 == 1){ // 3rd job
 			level = 70;
 		}
-		else if (getId() % 1000 > 0 && getId() % 100 == 0){ // 1st job
+		else if (getId() % 100 > 0 && getId() % 10 == 0){ // 2nd job
 			level = 30;
 		}
-		else if (getId() % 1000 == 0){ // beginner
+		else if (getId() % 1000 > 0 && getId() % 100 == 0){ // 1st job
 			level = 10;
+			if (this == MAGICIAN){
+				level = 8;
+			}
 		}
 		return level;
 	}
