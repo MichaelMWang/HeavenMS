@@ -11257,6 +11257,7 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
         addReborns();
         changeJob(job);
         setLevel(0);
+        updateRemainingSp(0);
         levelUp(true);
     }
     
