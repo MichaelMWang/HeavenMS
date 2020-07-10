@@ -27,10 +27,9 @@ public class JobAdvCommand extends Command {
 				}
 			}
 			else if (newJob.length == 0){
-				ArrayList<String> newJobNames = MapleJob.getNamesFromIds(newJob)
+				ArrayList<String> newJobNames = MapleJob.getNamesFromIds(newJob);
 				if (params.length > 0){
 					if (newJobNames.contains(param[0])){
-						//player.changeJob(MapleJob.valueOf(param[0].toUpperCase()));
 						player.changeJob(newJob[newJobNames.indexOf(param[0].toLowerCase())]);
 					}
 					else{
