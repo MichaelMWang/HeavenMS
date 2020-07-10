@@ -185,6 +185,7 @@ public class CommandsExecutor {
         
         addCommand(new String[]{"help", "commands"}, HelpCommand.class);
         addCommand("rebirth", RebirthCommand.class);
+        addCommand(new String[]{"jobadv", "advance"}, JobAdvCommand.class);
         addCommand("droplimit", DropLimitCommand.class);
         addCommand("time", TimeCommand.class);
         addCommand("credits", StaffCommand.class);
