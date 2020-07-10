@@ -11249,16 +11249,13 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
         throw new RuntimeException();
     }
 
-    public void executeReborn() {
+    public void executeReborn(MapleJob job) {
         if (!YamlConfig.config.server.USE_REBIRTH_SYSTEM) {
             yellowMessage("Rebirth system is not enabled!");
             throw new NotEnabledException();
         }
-        if (getLevel() != 200) {
-            return;
-        }
         addReborns();
-        changeJob(MapleJob.BEGINNER);
+        changeJob(job);
         setLevel(0);
         levelUp(true);
     }
