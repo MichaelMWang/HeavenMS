@@ -18,19 +18,25 @@ public class JobAdvCommand extends Command {
 			MapleJob job = player.getJob();
 			ArrayList<MapleJob> newJob = job.getNextJob();
 			int level = player.getLevel();
-			if (newJob.length == 1){
-				if (level >= newJob[0].getAdvLevel()){
-					player.changeJob(newJob[0]);
+			if (newJob.size() == 1){
+				if (level >= newJob.get(0).getAdvLevel()){
+					player.changeJob(newJob.get(0));
 				}
 				else{
-					player.message("You must reach level " + newJob[0].getAdvLevel() + " before advancing.");
+					player.message("You must reach level " + newJob.get(0).getAdvLevel() + " before advancing.");
 				}
 			}
-			else if (newJob.length == 0){
+			else if (newJob.size() == 0){
 				ArrayList<String> newJobNames = MapleJob.getNamesFromIds(newJob);
 				if (params.length > 0){
-					if (newJobNames.contains(param[0])){
-						player.changeJob(newJob[newJobNames.indexOf(param[0].toLowerCase())]);
+					if (newJobNames.contains(params[0])){
+						//checklevel!
+						if (level >= newJob.get(newJobNames.indexOf(params[0].toLowerCase())).getAdvLevel()){
+							player.changeJob(newJob.get(newJobNames.indexOf(params[0].toLowerCase())));
+						}
+						else{
+							player.message("You must reach level " + newJob.get(newJobNames.indexOf(params[0].toLowerCase())).getAdvLevel() + " before advancing.");
+						}
 					}
 					else{
 						player.message("Syntax: @rebirth [" + String.join("|",newJobNames) + "]");
