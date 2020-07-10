@@ -16,26 +16,29 @@ public class JobAdvCommand extends Command {
 		MapleCharacter player = c.getPlayer();
 		if (player.getReborns() > 0){
 			MapleJob job = player.getJob();
-			ArrayList<MapleJob> newJob = job.getNextJob();
+			ArrayList<MapleJob> newJobs = job.getNextJob();
+			MapleJob newJob = MapleJob.BEGINNER;
 			int level = player.getLevel();
-			if (newJob.size() == 1){
-				if (level >= newJob.get(0).getAdvLevel()){
-					player.changeJob(newJob.get(0));
+			boolean changeJob = false;
+			if (newJobs.size() == 1){
+				newJob = newJobs.get(0);
+				if (level >= newJob.getAdvLevel()){
+					changeJob = true;
 				}
 				else{
-					player.message("You must reach level " + newJob.get(0).getAdvLevel() + " before advancing.");
+					player.message("You must reach level " + newJob.getAdvLevel() + " before advancing.");
 				}
 			}
-			else if (newJob.size() == 0){
-				ArrayList<String> newJobNames = MapleJob.getNamesFromIds(newJob);
+			else if (newJobs.size() > 1){
+				ArrayList<String> newJobNames = MapleJob.getNamesFromIds(newJobs);
 				if (params.length > 0){
 					if (newJobNames.contains(params[0])){
-						//checklevel!
-						if (level >= newJob.get(newJobNames.indexOf(params[0].toLowerCase())).getAdvLevel()){
-							player.changeJob(newJob.get(newJobNames.indexOf(params[0].toLowerCase())));
+						newJob = newJobs.get(newJobNames.indexOf(params[0].toLowerCase()));
+						if (level >= newJob.getAdvLevel()){
+							changeJob = true;
 						}
 						else{
-							player.message("You must reach level " + newJob.get(newJobNames.indexOf(params[0].toLowerCase())).getAdvLevel() + " before advancing.");
+							player.message("You must reach level " + newJob.getAdvLevel() + " before advancing.");
 						}
 					}
 					else{
@@ -48,6 +51,12 @@ public class JobAdvCommand extends Command {
 			}
 			else{
 				player.message("There are no available job advancements at this time.");
+			}
+			if (changeJob){
+				player.changeJob(newJob);
+				if (newJob.getAdvLevel() <= 10 && level > newJob.getAdvLevel()){
+					player.updateRemainingSp(player.getRemainingSp() + (level - newJob.getAdvLevel())*3);
+				}
 			}
 		}
 		else{
