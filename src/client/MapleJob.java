@@ -137,170 +137,170 @@ public enum MapleJob {
 	public ArrayList<MapleJob> getNextJob(){
 		ArrayList<MapleJob> jobs = new ArrayList<MapleJob>();
 		switch (this){
-			case MapleJob.BEGINNER:
-				jobs.add(MapleJob.WARRIOR);
-				jobs.add(MapleJob.MAGICIAN);
-				jobs.add(MapleJob.BOWMAN);
-				jobs.add(MapleJob.THIEF);
-				jobs.add(MapleJob.PIRATE);
+			case BEGINNER:
+				jobs.add(WARRIOR);
+				jobs.add(MAGICIAN);
+				jobs.add(BOWMAN);
+				jobs.add(THIEF);
+				jobs.add(PIRATE);
 				break;
-			case MapleJob.WARRIOR:
-				jobs.add(MapleJob.FIGHTER);
-				jobs.add(MapleJob.PAGE);
-				jobs.add(MapleJob.SPEARMAN);
+			case WARRIOR:
+				jobs.add(FIGHTER);
+				jobs.add(PAGE);
+				jobs.add(SPEARMAN);
 				break;
-			case MapleJob.FIGHTER:
-				jobs.add(MapleJob.CRUSADER);
+			case FIGHTER:
+				jobs.add(CRUSADER);
 				break;
-			case MapleJob.CRUSADER:
-				jobs.add(MapleJob.HERO);
+			case CRUSADER:
+				jobs.add(HERO);
 				break;
-			case MapleJob.PAGE:
-				jobs.add(MapleJob.WHITEKNIGHT);
+			case PAGE:
+				jobs.add(WHITEKNIGHT);
 				break;
-			case MapleJob.WHITEKNIGHT:
-				jobs.add(MapleJob.PALADIN);
+			case WHITEKNIGHT:
+				jobs.add(PALADIN);
 				break;
-			case MapleJob.SPEARMAN:
-				jobs.add(MapleJob.DRAGONKNIGHT);
+			case SPEARMAN:
+				jobs.add(DRAGONKNIGHT);
 				break;
-			case MapleJob.DRAGONKNIGHT:
-				jobs.add(MapleJob.DARKKNIGHT);
+			case DRAGONKNIGHT:
+				jobs.add(DARKKNIGHT);
 				break;
-			case MapleJob.MAGICIAN:
-				jobs.add(MapleJob.FP_WIZARD);
-				jobs.add(MapleJob.IL_WIZARD);
-				jobs.add(MapleJob.CLERIC);
+			case MAGICIAN:
+				jobs.add(FP_WIZARD);
+				jobs.add(IL_WIZARD);
+				jobs.add(CLERIC);
 				break;
-			case MapleJob.FP_WIZARD:
-				jobs.add(MapleJob.FP_MAGE);
+			case FP_WIZARD:
+				jobs.add(FP_MAGE);
 				break;
-			case MapleJob.FP_MAGE:
-				jobs.add(MapleJob.FP_ARCHMAGE);
+			case FP_MAGE:
+				jobs.add(FP_ARCHMAGE);
 				break;
-			case MapleJob.IL_WIZARD:
-				jobs.add(MapleJob.IL_MAGE);
+			case IL_WIZARD:
+				jobs.add(IL_MAGE);
 				break;
-			case MapleJob.IL_MAGE:
-				jobs.add(MapleJob.IL_ARCHMAGE);
+			case IL_MAGE:
+				jobs.add(IL_ARCHMAGE);
 				break;
-			case MapleJob.CLERIC:
-				jobs.add(MapleJob.PRIEST);
+			case CLERIC:
+				jobs.add(PRIEST);
 				break;
-			case MapleJob.PRIEST:
-				jobs.add(MapleJob.BISHOP);
+			case PRIEST:
+				jobs.add(BISHOP);
 				break;
-			case MapleJob.BOWMAN:
-				jobs.add(MapleJob.HUNTER);
-				jobs.add(MapleJob.CROSSBOWMAN);
+			case BOWMAN:
+				jobs.add(HUNTER);
+				jobs.add(CROSSBOWMAN);
 				break;
-			case MapleJob.HUNTER:
-				jobs.add(MapleJob.RANGER);
+			case HUNTER:
+				jobs.add(RANGER);
 				break;
-			case MapleJob.RANGER:
-				jobs.add(MapleJob.BOWMASTER);
+			case RANGER:
+				jobs.add(BOWMASTER);
 				break;
-			case MapleJob.CROSSBOWMAN:
-				jobs.add(MapleJob.SNIPER);
+			case CROSSBOWMAN:
+				jobs.add(SNIPER);
 				break;
-			case MapleJob.SNIPER:
-				jobs.add(MapleJob.MARKSMAN);
+			case SNIPER:
+				jobs.add(MARKSMAN);
 				break;
-			case MapleJob.THIEF:
-				jobs.add(MapleJob.ASSASSIN);
-				jobs.add(MapleJob.BANDIT);
+			case THIEF:
+				jobs.add(ASSASSIN);
+				jobs.add(BANDIT);
 				break;
-			case MapleJob.ASSASSIN:
-				jobs.add(MapleJob.HERMIT);
+			case ASSASSIN:
+				jobs.add(HERMIT);
 				break;
-			case MapleJob.HERMIT:
-				jobs.add(MapleJob.NIGHTLORD);
+			case HERMIT:
+				jobs.add(NIGHTLORD);
 				break;
-			case MapleJob.BANDIT:
-				jobs.add(MapleJob.CHIEFBANDIT);
+			case BANDIT:
+				jobs.add(CHIEFBANDIT);
 				break;
-			case MapleJob.CHIEFBANDIT:
-				jobs.add(MapleJob.SHADOWER);
+			case CHIEFBANDIT:
+				jobs.add(SHADOWER);
 				break;
-			case MapleJob.PIRATE:
-				jobs.add(MapleJob.BRAWLER);
-				jobs.add(MapleJob.GUNSLINGER);
+			case PIRATE:
+				jobs.add(BRAWLER);
+				jobs.add(GUNSLINGER);
 				break;
-			case MapleJob.BRAWLER:
-				jobs.add(MapleJob.MARAUDER);
+			case BRAWLER:
+				jobs.add(MARAUDER);
 				break;
-			case MapleJob.MARAUDER:
-				jobs.add(MapleJob.BUCCANEER);
+			case MARAUDER:
+				jobs.add(BUCCANEER);
 				break;
-			case MapleJob.GUNSLINGER:
-				jobs.add(MapleJob.OUTLAW);
+			case GUNSLINGER:
+				jobs.add(OUTLAW);
 				break;
-			case MapleJob.OUTLAW:
-				jobs.add(MapleJob.CORSAIR);
+			case OUTLAW:
+				jobs.add(CORSAIR);
 				break;
-			case MapleJob.NOBLESSE:
-				jobs.add(MapleJob.DAWNWARRIOR1);
-				jobs.add(MapleJob.BLAZEWIZARD1);
-				jobs.add(MapleJob.WINDARCHER1);
-				jobs.add(MapleJob.NIGHTWALKER1);
-				jobs.add(MapleJob.THUNDERBREAKER1);
+			case NOBLESSE:
+				jobs.add(DAWNWARRIOR1);
+				jobs.add(BLAZEWIZARD1);
+				jobs.add(WINDARCHER1);
+				jobs.add(NIGHTWALKER1);
+				jobs.add(THUNDERBREAKER1);
 				break;
-			case MapleJob.DAWNWARRIOR1:
-				jobs.add(MapleJob.DAWNWARRIOR2);
+			case DAWNWARRIOR1:
+				jobs.add(DAWNWARRIOR2);
 				break;
-			case MapleJob.DAWNWARRIOR2:
-				jobs.add(MapleJob.DAWNWARRIOR3);
+			case DAWNWARRIOR2:
+				jobs.add(DAWNWARRIOR3);
 				break;
-			case MapleJob.DAWNWARRIOR3:
-				jobs.add(MapleJob.DAWNWARRIOR4);
+			case DAWNWARRIOR3:
+				jobs.add(DAWNWARRIOR4);
 				break;
-			case MapleJob.BLAZEWIZARD1:
-				jobs.add(MapleJob.BLAZEWIZARD2);
+			case BLAZEWIZARD1:
+				jobs.add(BLAZEWIZARD2);
 				break;
-			case MapleJob.BLAZEWIZARD2:
-				jobs.add(MapleJob.BLAZEWIZARD3);
+			case BLAZEWIZARD2:
+				jobs.add(BLAZEWIZARD3);
 				break;
-			case MapleJob.BLAZEWIZARD3:
-				jobs.add(MapleJob.BLAZEWIZARD4);
+			case BLAZEWIZARD3:
+				jobs.add(BLAZEWIZARD4);
 				break;
-			case MapleJob.WINDARCHER1:
-				jobs.add(MapleJob.WINDARCHER2);
+			case WINDARCHER1:
+				jobs.add(WINDARCHER2);
 				break;
-			case MapleJob.WINDARCHER2:
-				jobs.add(MapleJob.WINDARCHER3);
+			case WINDARCHER2:
+				jobs.add(WINDARCHER3);
 				break;
-			case MapleJob.WINDARCHER3:
-				jobs.add(MapleJob.WINDARCHER4);
+			case WINDARCHER3:
+				jobs.add(WINDARCHER4);
 				break;
-			case MapleJob.NIGHTWALKER1:
-				jobs.add(MapleJob.NIGHTWALKER2);
+			case NIGHTWALKER1:
+				jobs.add(NIGHTWALKER2);
 				break;
-			case MapleJob.NIGHTWALKER2:
-				jobs.add(MapleJob.NIGHTWALKER3);
+			case NIGHTWALKER2:
+				jobs.add(NIGHTWALKER3);
 				break;
-			case MapleJob.NIGHTWALKER3:
-				jobs.add(MapleJob.NIGHTWALKER4);
+			case NIGHTWALKER3:
+				jobs.add(NIGHTWALKER4);
 				break;
-			case MapleJob.THUNDERBREAKER1:
-				jobs.add(MapleJob.THUNDERBREAKER2);
+			case THUNDERBREAKER1:
+				jobs.add(THUNDERBREAKER2);
 				break;
-			case MapleJob.THUNDERBREAKER2:
-				jobs.add(MapleJob.THUNDERBREAKER3);
+			case THUNDERBREAKER2:
+				jobs.add(THUNDERBREAKER3);
 				break;
-			case MapleJob.THUNDERBREAKER3:
-				jobs.add(MapleJob.THUNDERBREAKER4);
+			case THUNDERBREAKER3:
+				jobs.add(THUNDERBREAKER4);
 				break;
-			case MapleJob.LEGEND:
-				jobs.add(MapleJob.ARAN1);
+			case LEGEND:
+				jobs.add(ARAN1);
 				break;
-			case MapleJob.ARAN1:
-				jobs.add(MapleJob.ARAN2);
+			case ARAN1:
+				jobs.add(ARAN2);
 				break;
-			case MapleJob.ARAN2:
-				jobs.add(MapleJob.ARAN3);
+			case ARAN2:
+				jobs.add(ARAN3);
 				break;
-			case MapleJob.ARAN3:
-				jobs.add(MapleJob.ARAN4);
+			case ARAN3:
+				jobs.add(ARAN4);
 				break;
 			default:
 				break;
@@ -309,7 +309,7 @@ public enum MapleJob {
 	}
 	
 	public int getAdvLevel(){
-		if (isA(MapleJob.EVAN1)){
+		if (isA(EVAN1)){
 			return 0;
 		}
 		int level = 0;
