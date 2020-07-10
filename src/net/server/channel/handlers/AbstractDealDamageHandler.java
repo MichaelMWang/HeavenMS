@@ -71,6 +71,7 @@ import constants.skills.Cleric;
 import constants.skills.Corsair;
 import constants.skills.Crossbowman;
 import constants.skills.Crusader;
+import constants.skills.DarkKnight;
 import constants.skills.DawnWarrior;
 import constants.skills.DragonKnight;
 import constants.skills.Evan;
@@ -800,7 +801,12 @@ public abstract class AbstractDealDamageHandler extends AbstractMaplePacketHandl
         boolean shadowPartner = false;
         if(chr.getBuffEffect(MapleBuffStat.SHADOWPARTNER) != null) {
             shadowPartner = true;
-        }	
+        }
+
+        boolean berserk = false;
+        if(chr.getJob() == MapleJob.DARKKNIGHT) {
+            berserk = true; // Assuming berserk will be active for dark knights
+        }
 		
         if(ret.skill != 0) {
             int fixed = ret.getAttackEffect(chr, SkillFactory.getSkill(ret.skill)).getFixDamage();
@@ -902,6 +908,10 @@ public abstract class AbstractDealDamageHandler extends AbstractMaplePacketHandl
                             hitDmgMax = 200000;
                     } else if (ret.skill == Beginner.BAMBOO_RAIN || ret.skill == Noblesse.BAMBOO_RAIN || ret.skill == Evan.BAMBOO_THRUST || ret.skill == Legend.BAMBOO_THRUST) {
                         hitDmgMax = 82569000; // 30% of Max HP of strongest Dojo boss
+                    }
+
+                    if(berserk){
+                        hitDmgMax *= 2; // Apply max range for berserk
                     }
 
                     long maxWithCrit = hitDmgMax;
