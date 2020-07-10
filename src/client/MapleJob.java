@@ -20,6 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package client;
+import java.util.ArrayList;
 
 public enum MapleJob {
     BEGINNER(0),
@@ -132,4 +133,206 @@ public enum MapleJob {
         case 5: PIRATE;
         */
     }
+	
+	public ArrayList<MapleJob> getNextJob(){
+		ArrayList<MapleJob> jobs = new ArrayList<MapleJob>();
+		switch (this){
+			case MapleJob.BEGINNER:
+				jobs.add(MapleJob.WARRIOR);
+				jobs.add(MapleJob.MAGICIAN);
+				jobs.add(MapleJob.BOWMAN);
+				jobs.add(MapleJob.THIEF);
+				jobs.add(MapleJob.PIRATE);
+				break;
+			case MapleJob.WARRIOR:
+				jobs.add(MapleJob.FIGHTER);
+				jobs.add(MapleJob.PAGE);
+				jobs.add(MapleJob.SPEARMAN);
+				break;
+			case MapleJob.FIGHTER:
+				jobs.add(MapleJob.CRUSADER);
+				break;
+			case MapleJob.CRUSADER:
+				jobs.add(MapleJob.HERO);
+				break;
+			case MapleJob.PAGE:
+				jobs.add(MapleJob.WHITEKNIGHT);
+				break;
+			case MapleJob.WHITEKNIGHT:
+				jobs.add(MapleJob.PALADIN);
+				break;
+			case MapleJob.SPEARMAN:
+				jobs.add(MapleJob.DRAGONKNIGHT);
+				break;
+			case MapleJob.DRAGONKNIGHT:
+				jobs.add(MapleJob.DARKKNIGHT);
+				break;
+			case MapleJob.MAGICIAN:
+				jobs.add(MapleJob.FP_WIZARD);
+				jobs.add(MapleJob.IL_WIZARD);
+				jobs.add(MapleJob.CLERIC);
+				break;
+			case MapleJob.FP_WIZARD:
+				jobs.add(MapleJob.FP_MAGE);
+				break;
+			case MapleJob.FP_MAGE:
+				jobs.add(MapleJob.FP_ARCHMAGE);
+				break;
+			case MapleJob.IL_WIZARD:
+				jobs.add(MapleJob.IL_MAGE);
+				break;
+			case MapleJob.IL_MAGE:
+				jobs.add(MapleJob.IL_ARCHMAGE);
+				break;
+			case MapleJob.CLERIC:
+				jobs.add(MapleJob.PRIEST);
+				break;
+			case MapleJob.PRIEST:
+				jobs.add(MapleJob.BISHOP);
+				break;
+			case MapleJob.BOWMAN:
+				jobs.add(MapleJob.HUNTER);
+				jobs.add(MapleJob.CROSSBOWMAN);
+				break;
+			case MapleJob.HUNTER:
+				jobs.add(MapleJob.RANGER);
+				break;
+			case MapleJob.RANGER:
+				jobs.add(MapleJob.BOWMASTER);
+				break;
+			case MapleJob.CROSSBOWMAN:
+				jobs.add(MapleJob.SNIPER);
+				break;
+			case MapleJob.SNIPER:
+				jobs.add(MapleJob.MARKSMAN);
+				break;
+			case MapleJob.THIEF:
+				jobs.add(MapleJob.ASSASSIN);
+				jobs.add(MapleJob.BANDIT);
+				break;
+			case MapleJob.ASSASSIN:
+				jobs.add(MapleJob.HERMIT);
+				break;
+			case MapleJob.HERMIT:
+				jobs.add(MapleJob.NIGHTLORD);
+				break;
+			case MapleJob.BANDIT:
+				jobs.add(MapleJob.CHIEFBANDIT);
+				break;
+			case MapleJob.CHIEFBANDIT:
+				jobs.add(MapleJob.SHADOWER);
+				break;
+			case MapleJob.PIRATE:
+				jobs.add(MapleJob.BRAWLER);
+				jobs.add(MapleJob.GUNSLINGER);
+				break;
+			case MapleJob.BRAWLER:
+				jobs.add(MapleJob.MARAUDER);
+				break;
+			case MapleJob.MARAUDER:
+				jobs.add(MapleJob.BUCCANEER);
+				break;
+			case MapleJob.GUNSLINGER:
+				jobs.add(MapleJob.OUTLAW);
+				break;
+			case MapleJob.OUTLAW:
+				jobs.add(MapleJob.CORSAIR);
+				break;
+			case MapleJob.NOBLESSE:
+				jobs.add(MapleJob.DAWNWARRIOR1);
+				jobs.add(MapleJob.BLAZEWIZARD1);
+				jobs.add(MapleJob.WINDARCHER1);
+				jobs.add(MapleJob.NIGHTWALKER1);
+				jobs.add(MapleJob.THUNDERBREAKER1);
+				break;
+			case MapleJob.DAWNWARRIOR1:
+				jobs.add(MapleJob.DAWNWARRIOR2);
+				break;
+			case MapleJob.DAWNWARRIOR2:
+				jobs.add(MapleJob.DAWNWARRIOR3);
+				break;
+			case MapleJob.DAWNWARRIOR3:
+				jobs.add(MapleJob.DAWNWARRIOR4);
+				break;
+			case MapleJob.BLAZEWIZARD1:
+				jobs.add(MapleJob.BLAZEWIZARD2);
+				break;
+			case MapleJob.BLAZEWIZARD2:
+				jobs.add(MapleJob.BLAZEWIZARD3);
+				break;
+			case MapleJob.BLAZEWIZARD3:
+				jobs.add(MapleJob.BLAZEWIZARD4);
+				break;
+			case MapleJob.WINDARCHER1:
+				jobs.add(MapleJob.WINDARCHER2);
+				break;
+			case MapleJob.WINDARCHER2:
+				jobs.add(MapleJob.WINDARCHER3);
+				break;
+			case MapleJob.WINDARCHER3:
+				jobs.add(MapleJob.WINDARCHER4);
+				break;
+			case MapleJob.NIGHTWALKER1:
+				jobs.add(MapleJob.NIGHTWALKER2);
+				break;
+			case MapleJob.NIGHTWALKER2:
+				jobs.add(MapleJob.NIGHTWALKER3);
+				break;
+			case MapleJob.NIGHTWALKER3:
+				jobs.add(MapleJob.NIGHTWALKER4);
+				break;
+			case MapleJob.THUNDERBREAKER1:
+				jobs.add(MapleJob.THUNDERBREAKER2);
+				break;
+			case MapleJob.THUNDERBREAKER2:
+				jobs.add(MapleJob.THUNDERBREAKER3);
+				break;
+			case MapleJob.THUNDERBREAKER3:
+				jobs.add(MapleJob.THUNDERBREAKER4);
+				break;
+			case MapleJob.LEGEND:
+				jobs.add(MapleJob.ARAN1);
+				break;
+			case MapleJob.ARAN1:
+				jobs.add(MapleJob.ARAN2);
+				break;
+			case MapleJob.ARAN2:
+				jobs.add(MapleJob.ARAN3);
+				break;
+			case MapleJob.ARAN3:
+				jobs.add(MapleJob.ARAN4);
+				break;
+			default:
+				break;
+		}
+		return jobs;
+	}
+	
+	public int getAdvLevel(){
+		if (isA(MapleJob.EVAN1)){
+			return 0;
+		}
+		int level = 0;
+		if (getId() % 10 == 1){ // 3rd job
+			level = 120;
+		}
+		else if (getId() % 100 > 0 && getId() % 10 == 0){ // 2nd job
+			level = 70;
+		}
+		else if (getId() % 1000 > 0 && getId() % 100 == 0){ // 1st job
+			level = 30;
+		}
+		else if (getId() % 1000 == 0){ // beginner
+			level = 10;
+		}
+		return level;
+	}
+	
+	public static ArrayList<String> getNamesFromIds(ArrayList<MapleJob> jobs){
+		ArrayList<String> names = new ArrayList<String>();
+		for (MapleJob job: jobs){
+			names.add(job.name().toLowerCase());
+		}
+		return names;
+	}
 }
