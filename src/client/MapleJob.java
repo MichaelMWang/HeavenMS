@@ -20,6 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package client;
+import java.util.ArrayList;
 
 public enum MapleJob {
     BEGINNER(0),
@@ -132,4 +133,209 @@ public enum MapleJob {
         case 5: PIRATE;
         */
     }
+	
+	public ArrayList<MapleJob> getNextJob(){
+		ArrayList<MapleJob> jobs = new ArrayList<MapleJob>();
+		switch (this){
+			case BEGINNER:
+				jobs.add(WARRIOR);
+				jobs.add(MAGICIAN);
+				jobs.add(BOWMAN);
+				jobs.add(THIEF);
+				jobs.add(PIRATE);
+				break;
+			case WARRIOR:
+				jobs.add(FIGHTER);
+				jobs.add(PAGE);
+				jobs.add(SPEARMAN);
+				break;
+			case FIGHTER:
+				jobs.add(CRUSADER);
+				break;
+			case CRUSADER:
+				jobs.add(HERO);
+				break;
+			case PAGE:
+				jobs.add(WHITEKNIGHT);
+				break;
+			case WHITEKNIGHT:
+				jobs.add(PALADIN);
+				break;
+			case SPEARMAN:
+				jobs.add(DRAGONKNIGHT);
+				break;
+			case DRAGONKNIGHT:
+				jobs.add(DARKKNIGHT);
+				break;
+			case MAGICIAN:
+				jobs.add(FP_WIZARD);
+				jobs.add(IL_WIZARD);
+				jobs.add(CLERIC);
+				break;
+			case FP_WIZARD:
+				jobs.add(FP_MAGE);
+				break;
+			case FP_MAGE:
+				jobs.add(FP_ARCHMAGE);
+				break;
+			case IL_WIZARD:
+				jobs.add(IL_MAGE);
+				break;
+			case IL_MAGE:
+				jobs.add(IL_ARCHMAGE);
+				break;
+			case CLERIC:
+				jobs.add(PRIEST);
+				break;
+			case PRIEST:
+				jobs.add(BISHOP);
+				break;
+			case BOWMAN:
+				jobs.add(HUNTER);
+				jobs.add(CROSSBOWMAN);
+				break;
+			case HUNTER:
+				jobs.add(RANGER);
+				break;
+			case RANGER:
+				jobs.add(BOWMASTER);
+				break;
+			case CROSSBOWMAN:
+				jobs.add(SNIPER);
+				break;
+			case SNIPER:
+				jobs.add(MARKSMAN);
+				break;
+			case THIEF:
+				jobs.add(ASSASSIN);
+				jobs.add(BANDIT);
+				break;
+			case ASSASSIN:
+				jobs.add(HERMIT);
+				break;
+			case HERMIT:
+				jobs.add(NIGHTLORD);
+				break;
+			case BANDIT:
+				jobs.add(CHIEFBANDIT);
+				break;
+			case CHIEFBANDIT:
+				jobs.add(SHADOWER);
+				break;
+			case PIRATE:
+				jobs.add(BRAWLER);
+				jobs.add(GUNSLINGER);
+				break;
+			case BRAWLER:
+				jobs.add(MARAUDER);
+				break;
+			case MARAUDER:
+				jobs.add(BUCCANEER);
+				break;
+			case GUNSLINGER:
+				jobs.add(OUTLAW);
+				break;
+			case OUTLAW:
+				jobs.add(CORSAIR);
+				break;
+			case NOBLESSE:
+				jobs.add(DAWNWARRIOR1);
+				jobs.add(BLAZEWIZARD1);
+				jobs.add(WINDARCHER1);
+				jobs.add(NIGHTWALKER1);
+				jobs.add(THUNDERBREAKER1);
+				break;
+			case DAWNWARRIOR1:
+				jobs.add(DAWNWARRIOR2);
+				break;
+			case DAWNWARRIOR2:
+				jobs.add(DAWNWARRIOR3);
+				break;
+			case DAWNWARRIOR3:
+				jobs.add(DAWNWARRIOR4);
+				break;
+			case BLAZEWIZARD1:
+				jobs.add(BLAZEWIZARD2);
+				break;
+			case BLAZEWIZARD2:
+				jobs.add(BLAZEWIZARD3);
+				break;
+			case BLAZEWIZARD3:
+				jobs.add(BLAZEWIZARD4);
+				break;
+			case WINDARCHER1:
+				jobs.add(WINDARCHER2);
+				break;
+			case WINDARCHER2:
+				jobs.add(WINDARCHER3);
+				break;
+			case WINDARCHER3:
+				jobs.add(WINDARCHER4);
+				break;
+			case NIGHTWALKER1:
+				jobs.add(NIGHTWALKER2);
+				break;
+			case NIGHTWALKER2:
+				jobs.add(NIGHTWALKER3);
+				break;
+			case NIGHTWALKER3:
+				jobs.add(NIGHTWALKER4);
+				break;
+			case THUNDERBREAKER1:
+				jobs.add(THUNDERBREAKER2);
+				break;
+			case THUNDERBREAKER2:
+				jobs.add(THUNDERBREAKER3);
+				break;
+			case THUNDERBREAKER3:
+				jobs.add(THUNDERBREAKER4);
+				break;
+			case LEGEND:
+				jobs.add(ARAN1);
+				break;
+			case ARAN1:
+				jobs.add(ARAN2);
+				break;
+			case ARAN2:
+				jobs.add(ARAN3);
+				break;
+			case ARAN3:
+				jobs.add(ARAN4);
+				break;
+			default:
+				break;
+		}
+		return jobs;
+	}
+	
+	public int getAdvLevel(){
+		if (isA(EVAN1)){
+			return 0;
+		}
+		int level = 0;
+		if (getId() % 10 == 2){ // 4th job
+			level = 120;
+		}
+		else if (getId() % 10 == 1){ // 3rd job
+			level = 70;
+		}
+		else if (getId() % 100 > 0 && getId() % 10 == 0){ // 2nd job
+			level = 30;
+		}
+		else if (getId() % 1000 > 0 && getId() % 100 == 0){ // 1st job
+			level = 10;
+			if (this == MAGICIAN){
+				level = 8;
+			}
+		}
+		return level;
+	}
+	
+	public static ArrayList<String> getNamesFromIds(ArrayList<MapleJob> jobs){
+		ArrayList<String> names = new ArrayList<String>();
+		for (MapleJob job: jobs){
+			names.add(job.name().toLowerCase());
+		}
+		return names;
+	}
 }
